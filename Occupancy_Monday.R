@@ -1,4 +1,4 @@
-#Occupancy_Monday_Histogram.R
+#Occupancy_Monday.R
 
 #Setting Histogram Colour
 colourHist <- c(1:3,4:7)
@@ -9,6 +9,13 @@ humidityMonday <- occupancyMonday$Humidity
 lightMonday <- occupancyMonday$Light
 co2Monday <- occupancyMonday$CO2
 humidityRatioMonday <- occupancyMonday$HumidityRatio
+
+#Summary on Variables
+summary(temperatureMonday)
+summary(humidityMonday)
+summary(lightMonday)
+summary(co2Monday)
+summary(humidityRatioMonday)
 
 hist(temperatureMonday, main = "Monday's Temperature Range", xlab = "Temperature", 
 		 ylab = "Frequency", col = colourHist, breaks = 5)
