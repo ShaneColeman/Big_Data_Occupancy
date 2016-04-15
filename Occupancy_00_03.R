@@ -3,6 +3,13 @@
 #Setting Histogram Colour
 colourHist <- c(1:3,4:7)
 
+#Count Attributes
+count(occupancy00_03,"Temperature")
+count(occupancy00_03,"Humidity")
+count(occupancy00_03,"Light")
+count(occupancy00_03,"CO2")
+count(occupancy00_03,"HumidityRatio")
+
 #Attribute Value Variables
 temperature00_03 <- occupancy00_03$Temperature
 humidity00_03 <- occupancy00_03$Humidity

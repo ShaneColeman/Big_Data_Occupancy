@@ -1,7 +1,16 @@
 #Occupancy_Tuesday.R
 
+library(plyr)
+
 #Setting Histogram Colour
 colourHist <- c(1:3,4:7)
+
+#Count Attributes
+TuesdayTemperature <- count(occupancyTuesday,"Temperature")
+TuesdayHumidity <- count(occupancyTuesday,"Humidity")
+TuesdayLight <- count(occupancyTuesday,"Light")
+TuesdayCO2 <- count(occupancyTuesday,"CO2")
+TuesdayHumidityRatio <- count(occupancyTuesday,"HumidityRatio")
 
 #Attribute Value Variables
 temperatureTuesday <- occupancyTuesday$Temperature
