@@ -8,8 +8,10 @@
 
 head(occupancyPreProcessed)
 
-occupancyPPDT <- rpart(Occupancy ~ Day + TimePeriod + Temperature + Humidity + CO2 + humidityRatioDT,
-											 data = occupancyPreProcessed, method = "class")
+sapply(occupancyPreProcessed, "class")
+
+occupancyPPDT <- rpart(Occupancy ~ Day + TimePeriod + Temperature + Humidity + CO2 + 
+											 	humidityRatioDT, data = occupancyPreProcessed, method = "class")
 
 prp(occupancyPPDT)
 
