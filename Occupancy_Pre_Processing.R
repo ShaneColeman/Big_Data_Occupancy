@@ -3,6 +3,8 @@
 occupancyFile <- read.csv("Occupancy_Data_Set.txt", header = TRUE, sep = ",", 
 													stringsAsFactors = TRUE)
 
+rownames(occupancyFile) <- NULL
+
 str(occupancyFile)
 sapply(occupancyFile, class)
 
@@ -25,7 +27,7 @@ str(occupancy)
 list <- strsplit(occupancy$date, " ")
 
 #install.packages("plyr")
-library(plyr)
+#library(plyr)
 
 dateTime <- ldply(list)
 colnames(dateTime) <- c("date","time")
@@ -106,6 +108,8 @@ occupancyAltered$TimeOfDay[occupancyAltered$TimeOfDay != "00:00 - 02:59" &
 
 summary(occupancyAltered)
 
+write.csv(occupancyAltered, file = "OccupancyAltered.csv", row.names = FALSE)
+
 str(occupancyAltered)
 
 occupancyAltered$Day <- as.factor(occupancyAltered$Day)
@@ -132,3 +136,4 @@ occupancy12_15 <- occupancyPreProcessed[occupancyPreProcessed$TimeOfDay == "12:0
 occupancy15_18 <- occupancyPreProcessed[occupancyPreProcessed$TimeOfDay == "15:00 - 17:59",]
 occupancy18_21 <- occupancyPreProcessed[occupancyPreProcessed$TimeOfDay == "18:00 - 20:59",]
 occupancy21_00 <- occupancyPreProcessed[occupancyPreProcessed$TimeOfDay == "21:00 - 23:59",]
+

@@ -1,6 +1,7 @@
 #Occupancy_AM.R
 
-library(plyr)
+#Count Function
+#library(plyr)
 
 #Setting Histogram Colour
 colourHist <- c(1:3,4:7)
@@ -19,6 +20,23 @@ lightAM <- occupancyAM$Light
 co2AM <- occupancyAM$CO2
 humidityRatioAM <- occupancyAM$HumidityRatio
 occupancyAMValue <- as.factor(occupancyAM$Occupancy)
+
+#Minimum - Maximum Attribute Values
+#Temperature
+min(temperatureAM)
+max(temperatureAM)
+#Humidity
+min(humidityAM)
+max(humidityAM)
+#Light
+min(lightAM)
+max(lightAM)
+#CO2
+min(co2AM)
+max(co2AM)
+#Humidity Ratio
+min(humidityRatioAM)
+max(humidityRatioAM)
 
 #Summary on Variables
 summary(temperatureAM)
@@ -47,14 +65,30 @@ hist(humidityRatioAM, main = "AM Humidity Ratio Range", xlab = "Humidity",
 		 ylab = "Frequency", col = colourHist, breaks = 5)
 
 #Box Plot
-boxplot(temperatureAM ~ occupancyAMValue, xlab = "Occupied", ylab = "Temperature", 
-				cex = 0, col = c("green","yellow"))
+boxplot(temperatureAM ~ occupancyAMValue, main = "Temperature due to Occupancy: AM", 
+				xlab = "Occupied", ylab = "Temperature", cex = 0, col = c("green","yellow"))
 
-boxplot(humidityAM ~ occupancyAMValue, xlab = "Occupied", ylab = "Humidity", 
-				cex = 0, col = c("green","yellow"))
+boxplot(humidityAM ~ occupancyAMValue, main = "Humidity due to Occupancy: AM", 
+				xlab = "Occupied", ylab = "Humidity", cex = 0, col = c("green","yellow"))
 
-boxplot(co2AM ~ occupancyAMValue, xlab = "Occupied", ylab = "CO2", 
-				cex = 0, col = c("green","yellow"))
+boxplot(lightAM ~ occupancyAMValue, main = "Light due to Occupancy: AM", 
+				xlab = "Occupied", ylab = "Light",cex = 0, col = c("green","yellow"))
 
-boxplot(lightAM ~ occupancyAMValue, xlab = "Occupied", ylab = "Light",
-				cex = 0, col = c("green","yellow"))
+boxplot(co2AM ~ occupancyAMValue, main = "CO2 due to Occupancy: AM" ,
+				xlab = "Occupied", ylab = "CO2", cex = 0, col = c("green","yellow"))
+
+boxplot(humidityRatioAM ~ occupancyAMValue, main = "Humidity Ratio due to Occupancy: AM",
+				xlab = "Occupied", ylab = "Humidity Ratio",cex = 0, col = c("green","yellow"))
+
+#Decision Tree
+#library(rpart)
+#library(rattle)
+#library(rpart.plot)
+#library(RColorBrewer)
+
+amDecisionTree <- rpart(Occupancy ~ Day + TimePeriod + TimeOfDay + Temperature + Humidity +
+													Light + CO2 + HumidityRatio, data = occupancyAM, method = "class")
+
+prp(amDecisionTree)
+
+fancyRpartPlot(amDecisionTree)
