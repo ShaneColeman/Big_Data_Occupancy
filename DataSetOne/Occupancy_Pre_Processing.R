@@ -1,6 +1,6 @@
 #Occupancy_Pre_Processing.R
 
-occupancyFile <- read.csv("Occupancy_Data_Set.txt", header = TRUE, sep = ",", 
+occupancyFile <- read.csv("DataSetOne/Occupancy_Data_Set.txt", header = TRUE, sep = ",", 
 													stringsAsFactors = TRUE)
 
 rownames(occupancyFile) <- NULL
@@ -108,7 +108,7 @@ occupancyAltered$TimeOfDay[occupancyAltered$TimeOfDay != "00:00 - 02:59" &
 
 summary(occupancyAltered)
 
-write.csv(occupancyAltered, file = "OccupancyAltered.csv", row.names = FALSE)
+write.csv(occupancyAltered, file = "DataSetOne/OccupancyAltered.csv", row.names = FALSE)
 
 str(occupancyAltered)
 
