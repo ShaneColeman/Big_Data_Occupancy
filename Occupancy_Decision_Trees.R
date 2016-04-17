@@ -10,9 +10,37 @@ head(occupancyPreProcessed)
 
 sapply(occupancyPreProcessed, "class")
 
-occupancyPPDT <- rpart(Occupancy ~ Day + TimePeriod + Temperature + Humidity + CO2 + 
-											 	humidityRatioDT, data = occupancyPreProcessed, method = "class")
+occupancyDecisionTree <- occupancyPreProcessed
 
-prp(occupancyPPDT)
+#occupancyDecisionTree[1:9] <- sapply(occupancyDecisionTree[1:9], as.numeric)
 
-fancyRpartPlot(occupancyPPDT)
+# dayDT <- occupancyDecisionTree$Day
+# timePeriodDT <- occupancyDecisionTree$TimePeriod
+# timeOfDayDT <- as.numeric(occupancyDecisionTree$TimeOfDay)
+# temperatureDT <- occupancyDecisionTree$Temperature
+# humidityDT <- occupancyDecisionTree$Humidity
+# lightDT <- occupancyDecisionTree$Light
+# co2DT <- occupancyDecisionTree$CO2
+# humidityRatioDT <- occupancyDecisionTree$HumidityRatio
+# occupancyDT <- occupancyDecisionTree$Occupancy
+
+occupancyAll <- rpart(Occupancy ~ Day + TimePeriod + TimeOfDay + Temperature + Humidity + Light +
+										CO2 + HumidityRatio, data = occupancyDecisionTree, 
+											method = "class")
+prp(occupancyAll)
+fancyRpartPlot(occupancyAll)
+
+
+occupancyNoLight <- rpart(Occupancy ~ Day + TimePeriod + TimeOfDay + Temperature + Humidity +
+											CO2 + HumidityRatio, data = occupancyDecisionTree, 
+												method = "class")
+prp(occupancyNoLight)
+fancyRpartPlot(occupancyNoLight)
+
+
+occupancyNoDayTime <- rpart(Occupancy ~ Temperature + Humidity +
+												CO2 + HumidityRatio, data = occupancyDecisionTree, 
+													method = "class")
+prp(occupancyNoDayTime)
+fancyRpartPlot(occupancyNoDayTime, cex = 0.5)
+
