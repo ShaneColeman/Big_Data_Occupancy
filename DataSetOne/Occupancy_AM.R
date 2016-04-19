@@ -14,6 +14,9 @@ AMCO2 <- count(occupancyAM,"CO2")
 AMHumidityRatio <- count(occupancyAM,"HumidityRatio")
 
 #Attribute Value Variables
+dayAM <- occupancyAM$Day
+timePeriodAM <- occupancyAM$TimePeriod
+timeOfDayAM <- occupancyAM$TimeOfDay
 temperatureAM <- occupancyAM$Temperature
 humidityAM <- occupancyAM$Humidity
 lightAM <- occupancyAM$Light
@@ -92,3 +95,79 @@ amDecisionTree <- rpart(Occupancy ~ Day + TimePeriod + TimeOfDay + Temperature +
 prp(amDecisionTree)
 
 fancyRpartPlot(amDecisionTree)
+
+
+#Scatter Plot
+#install.packages("plotly")
+#install.packages("ggplot2")
+#install.packages("graphics")
+
+library(plotly)
+library(ggplot2)
+library(graphics)
+
+sapply(occupancyAM, "class")
+
+#https://plot.ly/r/line-and-scatter/#line-and-scatter-plots-in-r
+distinctColours <- RColorBrewer::brewer.pal(nlevels(occupancyAM$Occupancy), "Set1")
+
+#Day
+plot_ly(data = occupancyAM,x = dayAM, y = temperatureAM, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = dayAM, y = humidityAM, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = dayAM, y = lightAM, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = dayAM, y = humidityRatioAM, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+sapply(occupancyAM, "class")
+
+#Time of Day
+plot_ly(data = occupancyAM,x = TimeOfDay, y = Temperature, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = TimeOfDay, y = Humidity, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = TimeOfDay, y = Light, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = TimeOfDay, y = HumidityRatio, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+sapply(occupancyAM, "class")
+
+#Time Period
+plot_ly(data = occupancyAM,x = TimePeriod, y = Temperature, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = TimePeriod, y = Humidity, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = TimePeriod, y = Light, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = TimePeriod, y = HumidityRatio, mode = "markers", color = Occupancy,
+				colors = distinctColours)
+
+sapply(occupancyAM, "class")
+
+#Temperature
+plot_ly(data = occupancyAM,x = temperatureAM, y = humidityAM, mode = "markers", color = Occupancy,
+						colors = distinctColours)
+m <- line(humidityAM ~ temperatureAM)
+add_trace(y = fitted(m))
+
+plot_ly(data = occupancyAM,x = Temperature, y = CO2, mode = "markers", color = Occupancy,
+						colors = distinctColours)
+
+plot_ly(data = occupancyAM,x = Temperature, y = HumidityRatio, mode = "markers", color = Occupancy,
+						colors = distinctColours)
+
+#Scatter Plot Amended
+plot(temperatureAM,humidityAM)
+abline(lm(humidityAM ~ temperatureAM))
