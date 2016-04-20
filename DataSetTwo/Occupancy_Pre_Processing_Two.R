@@ -1,6 +1,6 @@
 #Occupancy_Pre_Processing_Two.R
 
-occupancyFileTwo <- read.csv("DataSetTwo/Occupancy_Data_Set_Training.txt", header = TRUE, sep = ",", 
+occupancyFileTwo <- read.csv("DataSetTwo/Occupancy_Data_Set_Two.txt", header = TRUE, sep = ",", 
 													stringsAsFactors = TRUE)
 
 rownames(occupancyFileTwo) <- NULL
