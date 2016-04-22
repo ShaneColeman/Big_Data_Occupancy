@@ -30,7 +30,6 @@ plot(x = occupancyAnalysis$Day, y = occupancyAnalysis$CO2,
 plot(x = occupancyAnalysis$Day, y = occupancyAnalysis$HumidityRatio,
 		 xlab = "Day", ylab = "Humidity Ratio", col = heat.colors(12), pch = 1, cex = 0.5)
 
-
 #Plot Time Period
 plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$Temperature,
 		 xlab = "Time Period", ylab = "Temperature", col = heat.colors(12), pch = 1, cex = 0.5)
@@ -46,7 +45,6 @@ plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$CO2,
 
 plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$HumidityRatio,
 		 xlab = "Time Period", ylab = "Humidity Ratio", col = heat.colors(12), pch = 1, cex = 0.5)
-
 
 #Plot Time of Day
 plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$Temperature,
