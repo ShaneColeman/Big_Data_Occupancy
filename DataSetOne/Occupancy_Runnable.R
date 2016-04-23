@@ -49,4 +49,10 @@ source(file = "DataSetOne/Occupancy_21_00.R")
 source(file = "DataSetOne/Occupancy_Decision_Trees.R")
 
 #15
+source(file = "DataSetOne/Occupancy_Pre_Processing_Analysis.R")
+
+#16
 source(file = "DataSetOne/Occupancy_Line_Graphs.R")
+
+#17
+source(file = "DataSetOne/Occupancy_Cluster.R")

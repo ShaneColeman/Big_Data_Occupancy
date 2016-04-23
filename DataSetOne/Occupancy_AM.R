@@ -101,10 +101,9 @@ fancyRpartPlot(amDecisionTree)
 #install.packages("plotly")
 #install.packages("ggplot2")
 #install.packages("graphics")
-
-library(plotly)
-library(ggplot2)
-library(graphics)
+#library(plotly)
+#library(ggplot2)
+#library(graphics)
 
 sapply(occupancyAM, "class")
 
