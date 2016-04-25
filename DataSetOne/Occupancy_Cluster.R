@@ -48,6 +48,8 @@ points(occupancyCluster$centers[c("Light","CO2")], col = 1:2,
 #https://rstudio-pubs-static.s3.amazonaws.com/33876_1d7794d9a86647ca90c4f182df93f0e8.html
 #Cluster Library
 head(occupancyCluster)
+
+occupancyCluster$Occupancy <- as.numeric(occupancyCluster$Occupancy)
 occupancyCluster.stand <- scale(occupancyCluster[-1])
 head(occupancyCluster.stand)
 summary(occupancyCluster.stand)
