@@ -156,17 +156,66 @@ plot_ly(data = occupancyAM,x = TimePeriod, y = HumidityRatio, mode = "markers", 
 sapply(occupancyAM, "class")
 
 #Temperature
-plot_ly(data = occupancyAM,x = temperatureAM, y = humidityAM, mode = "markers", color = Occupancy,
-						colors = distinctColours)
-m <- line(humidityAM ~ temperatureAM)
-add_trace(y = fitted(m))
-
-plot_ly(data = occupancyAM,x = Temperature, y = CO2, mode = "markers", color = Occupancy,
-						colors = distinctColours)
-
-plot_ly(data = occupancyAM,x = Temperature, y = HumidityRatio, mode = "markers", color = Occupancy,
-						colors = distinctColours)
+# plot_ly(data = occupancyAM,x = temperatureAM, y = humidityAM, mode = "markers", color = Occupancy,
+# 						colors = distinctColours)
+# m <- line(humidityAM ~ temperatureAM)
+# add_trace(y = fitted(m))
+# 
+# plot_ly(data = occupancyAM,x = Temperature, y = CO2, mode = "markers", color = Occupancy,
+# 						colors = distinctColours)
+# 
+# plot_ly(data = occupancyAM,x = Temperature, y = HumidityRatio, mode = "markers", color = Occupancy,
+# 						colors = distinctColours)
 
 #Scatter Plot Amended
-plot(temperatureAM,humidityAM)
-abline(lm(humidityAM ~ temperatureAM))
+#Temperature
+plot(temperatureAM,humidityAM, col = c("green","blue"))
+abline(lm(humidityAM ~ temperatureAM), col = c("red"))
+
+plot(temperatureAM,lightAM, col = c("green","blue"))
+abline(lm(lightAM ~ temperatureAM), col = c("red"))
+
+plot(temperatureAM,co2AM, col = c("green","blue"))
+abline(lm(co2AM ~ temperatureAM), col = c("red"))
+
+plot(temperatureAM,humidityRatioAM, col = c("green","blue"))
+abline(lm(humidityRatioAM ~ temperatureAM), col = c("red"))
+
+#Humidity
+plot(humidityAM,temperatureAM, col = c("green","blue"))
+abline(lm(temperatureAM ~ humidityAM), col = c("red"))
+
+plot(humidityAM,lightAM, col = c("green","blue"))
+abline(lm(lightAM ~ humidityAM), col = c("red"))
+
+plot(humidityAM,co2AM, col = c("green","blue"))
+abline(lm(co2AM ~ humidityAM), col = c("red"))
+
+plot(humidityAM,humidityRatioAM, col = c("green","blue"))
+abline(lm(humidityRatioAM ~ humidityAM), col = c("red"))
+
+#Light
+plot(lightAM,temperatureAM, col = c("green","blue"))
+abline(lm(temperatureAM ~ lightAM), col = c("red"))
+
+plot(lightAM, humidityAM, col = c("green","blue"))
+abline(lm(humidityAM ~ lightAM), col = c("red"))
+
+plot(lightAM, co2AM, col = c("green","blue"))
+abline(lm(co2AM ~ lightAM), col = c("red"))
+
+plot(lightAM, humidityRatioAM, col = c("green","blue"))
+abline(lm(humidityRatioAM ~ lightAM), col = c("red"))
+
+#CO2
+plot(co2AM,temperatureAM, col = c("green","blue"))
+abline(lm(temperatureAM ~ co2AM), col = c("red"))
+
+plot(co2AM, humidityAM, col = c("green","blue"))
+abline(lm(humidityAM ~ co2AM), col = c("red"))
+
+plot(co2AM, lightAM, col = c("green","blue"))
+abline(lm(lightAM ~ co2AM), col = c("red"))
+
+plot(co2AM, humidityRatioAM, col = c("green","blue"))
+abline(lm(humidityRatioAM ~ co2AM), col = c("red"))

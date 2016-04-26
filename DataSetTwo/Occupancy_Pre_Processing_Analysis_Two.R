@@ -64,3 +64,4 @@ plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$CO2,
 
 plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$HumidityRatio,
 		 xlab = "Time of Day", ylab = "Humidity Ratio", col = heat.colors(12), pch = 1, cex = 0.5)
+

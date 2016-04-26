@@ -10,7 +10,7 @@ sapply(occupancyFileTwo, class)
 
 occupancyTwo <- occupancyFileTwo
 head(occupancyTwo)
-#View(occupancy)
+#View(occupancyTwo)
 
 occupancyTwo$Occupancy[occupancyTwo$Occupancy == 1] <- "Yes"
 occupancyTwo$Occupancy[occupancyTwo$Occupancy == 0] <- "No"
@@ -26,9 +26,6 @@ str(occupancyTwo)
 #http://stackoverflow.com/questions/16248861/split-1-column-into-2-columns-in-a-dataframe
 listTwo <- strsplit(occupancyTwo$date, " ")
 
-#install.packages("plyr")
-#library(plyr)
-
 dateTimeTwo <- ldply(listTwo)
 colnames(dateTimeTwo) <- c("date","time")
 
@@ -43,7 +40,6 @@ occupancyAlteredTwo <- occupancyTwo[,c(1,8,2,3,4,5,6,7)]
 str(occupancyAlteredTwo)
 
 occupancyAlteredTwo$Date <- as.factor(occupancyAlteredTwo$Date)
-#occupancyAltered$Date <- as.POSIXlt(occupancyAltered$Date,tz = "GMT")
 str(occupancyAlteredTwo)
 
 occupancyAlteredTwo$Time <- as.factor(occupancyAlteredTwo$Time)
@@ -146,4 +142,3 @@ occupancy12_15Two <- occupancyPreProcessedTwo[occupancyPreProcessedTwo$TimeOfDay
 occupancy15_18Two <- occupancyPreProcessedTwo[occupancyPreProcessedTwo$TimeOfDay == "15:00 - 17:59",]
 occupancy18_21Two <- occupancyPreProcessedTwo[occupancyPreProcessedTwo$TimeOfDay == "18:00 - 20:59",]
 occupancy21_00Two <- occupancyPreProcessedTwo[occupancyPreProcessedTwo$TimeOfDay == "21:00 - 23:59",]
-
