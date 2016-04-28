@@ -18,50 +18,50 @@ sapply(occupancyAnalysisTwo, "class")
 plot(x = occupancyAnalysisTwo$Day, y = occupancyAnalysisTwo$Temperature,
 		 xlab = "Day", ylab = "Temperature", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$Day, y = occupancyAnalysis$Humidity,
+plot(x = occupancyAnalysisTwo$Day, y = occupancyAnalysisTwo$Humidity,
 		 xlab = "Day", ylab = "Humidity", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$Day, y = occupancyAnalysis$Light,
+plot(x = occupancyAnalysisTwo$Day, y = occupancyAnalysisTwo$Light,
 		 xlab = "Day", ylab = "Light", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$Day, y = occupancyAnalysis$CO2,
+plot(x = occupancyAnalysisTwo$Day, y = occupancyAnalysisTwo$CO2,
 		 xlab = "Day", ylab = "CO2", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$Day, y = occupancyAnalysis$HumidityRatio,
+plot(x = occupancyAnalysisTwo$Day, y = occupancyAnalysisTwo$HumidityRatio,
 		 xlab = "Day", ylab = "Humidity Ratio", col = heat.colors(12), pch = 1, cex = 0.5)
 
 
 #Plot Time Period
-plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$Temperature,
+plot(x = occupancyAnalysisTwo$TimePeriod, y = occupancyAnalysisTwo$Temperature,
 		 xlab = "Time Period", ylab = "Temperature", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$Humidity,
+plot(x = occupancyAnalysisTwo$TimePeriod, y = occupancyAnalysisTwo$Humidity,
 		 xlab = "Time Period", ylab = "Humidity", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$Light,
+plot(x = occupancyAnalysisTwo$TimePeriod, y = occupancyAnalysisTwo$Light,
 		 xlab = "Time Period", ylab = "Light", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$CO2,
+plot(x = occupancyAnalysisTwo$TimePeriod, y = occupancyAnalysisTwo$CO2,
 		 xlab = "Time Period", ylab = "CO2", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimePeriod, y = occupancyAnalysis$HumidityRatio,
+plot(x = occupancyAnalysisTwo$TimePeriod, y = occupancyAnalysisTwo$HumidityRatio,
 		 xlab = "Time Period", ylab = "Humidity Ratio", col = heat.colors(12), pch = 1, cex = 0.5)
 
 
 #Plot Time of Day
-plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$Temperature,
+plot(x = occupancyAnalysisTwo$TimeOfDay, y = occupancyAnalysisTwo$Temperature,
 		 xlab = "Time of Day", ylab = "Temperature", col = heat.colors(12), 
 		 pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$Humidity,
+plot(x = occupancyAnalysisTwo$TimeOfDay, y = occupancyAnalysisTwo$Humidity,
 		 xlab = "Time of Day", ylab = "Humidity", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$Light,
+plot(x = occupancyAnalysisTwo$TimeOfDay, y = occupancyAnalysisTwo$Light,
 		 xlab = "Time of Day", ylab = "Light", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$CO2,
+plot(x = occupancyAnalysisTwo$TimeOfDay, y = occupancyAnalysisTwo$CO2,
 		 xlab = "Time of Day", ylab = "CO2", col = heat.colors(12), pch = 1, cex = 0.5)
 
-plot(x = occupancyAnalysis$TimeOfDay, y = occupancyAnalysis$HumidityRatio,
+plot(x = occupancyAnalysisTwo$TimeOfDay, y = occupancyAnalysisTwo$HumidityRatio,
 		 xlab = "Time of Day", ylab = "Humidity Ratio", col = heat.colors(12), pch = 1, cex = 0.5)
 
