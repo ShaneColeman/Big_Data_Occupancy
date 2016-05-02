@@ -49,8 +49,8 @@ points(occupancyClusterTwo$centers[c("Light","CO2")], col = 1:2,
 #Cluster Library
 head(occupancyClusterTwo)
 occupancyCluster.standTwo <- scale(occupancyClusterTwo[-1])
-head(occupancyCluster.stand)
-summary(occupancyCluster.stand)
+head(occupancyCluster.standTwo)
+summary(occupancyCluster.standTwo)
 
 kMeansOccupancyFitTwo <- kmeans(occupancyCluster.standTwo,2)
 head(kMeansOccupancyFitTwo)
